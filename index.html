@@ -65,7 +65,13 @@ nav.links a:hover{color:var(--ink)}
 .btn:hover{background:#a83d12;border-color:#a83d12}
 .btn.line{background:transparent;color:var(--ink);border-color:var(--line-2)}
 .btn.line:hover{border-color:var(--copper);color:var(--copper)}
-@media(max-width:940px){nav.links{display:none}}
+.navtoggle{display:none;width:44px;height:40px;border:1px solid var(--line-2);background:none;cursor:pointer;align-items:center;justify-content:center;gap:4px;flex-direction:column}
+.navtoggle span{display:block;width:20px;height:2px;background:var(--ink)}
+.mobnav{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--line-2);box-shadow:0 24px 30px -18px rgba(0,0,0,.6);z-index:59}
+.mobnav a{padding:15px 30px;border-top:1px solid var(--line);font-family:'Oswald';font-weight:500;font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink)}
+.mobnav a.cta{background:var(--rust);color:#fff}
+body.navopen .mobnav{display:flex}
+@media(max-width:940px){nav.links{display:none}.navtoggle{display:flex}header.nav .wrap>a.btn{display:none}}
 
 /* HERO split */
 .hero{display:grid;grid-template-columns:1.06fr .94fr;min-height:84vh;border-bottom:1px solid var(--line)}
@@ -244,6 +250,10 @@ footer{background:#100e0b;border-top:1px solid var(--line-2);padding:60px 0 40px
       <a href="#about">01 About</a><a href="#metals">02 Metals</a><a href="#fleet">03 Fleet</a><a href="#operations">04 Field</a><a href="#compliance">05 Compliance</a><a href="#trade">06 Trading</a>
     </nav>
     <a href="#contact" class="btn">Request a quote</a>
+    <button class="navtoggle" aria-label="Open menu" onclick="document.body.classList.toggle('navopen')"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobnav" onclick="document.body.classList.remove('navopen')">
+    <a href="#about">About</a><a href="#metals">Metals</a><a href="#advantage">Advantage</a><a href="#capability">Fleet</a><a href="#operations">Operations</a><a href="#trade">Trading</a><a href="#contact" class="cta">Request a quote</a>
   </div>
 </header>
 
@@ -254,7 +264,7 @@ footer{background:#100e0b;border-top:1px solid var(--line-2);padding:60px 0 40px
     <h1 class="fade s2">The rare metals<br>behind modern <span class="o">industry</span>.</h1>
     <p class="fade s3">Jangjing Private Limited mines and consolidates Zimbabwe's minor metals — tantalum and tungsten from the Mutoko and Hurungwe pegmatites, antimony from the Kadoma belt, and chrome from the Great Dyke.</p>
     <div class="cta fade s4"><a href="#metals" class="btn">View metals</a><a href="#about" class="btn line">The company</a></div>
-    <div class="coord fade s4"><span>17.8°S&nbsp; 31.0°E</span><span>EST. 2026</span><span>Ta · W · Sb · Cr</span></div>
+    <div class="coord fade s4"><span>17.8°S&nbsp; 31.0°E</span><span>Harare · Zimbabwe</span><span>Ta · W · Sb · Cr</span></div>
   </div>
   <div class="hero-r">
     <img src="assets/excavator.jpg" alt="Jangjing excavator operator at the rock face">
@@ -328,16 +338,16 @@ footer{background:#100e0b;border-top:1px solid var(--line-2);padding:60px 0 40px
   <div class="wrap rail">
     <div class="lab">04 / Our fleet<span class="ln"></span></div>
     <div>
-      <h2 class="h2">We own the iron — not just the ground.</h2>
-      <p class="intro">Company-owned equipment and processing across every site. Cost, schedule and quality under our control.</p>
+      <h2 class="h2">Heavy lifting, kept in-house.</h2>
+      <p class="intro">From the rock face to the loaded truck, every stage runs on Jangjing's own machines and crews — so grade, cost and timing never hinge on a subcontractor.</p>
       <div style="margin-top:40px">
         <div class="row head"><span>Ref</span><span>Capability</span><span>Detail</span><span style="text-align:right">Status</span></div>
-        <div class="row"><div class="n">01</div><div class="nm">Excavators &amp; loaders</div><div class="ds">Tracked excavators and loaders working ore faces, pits and stockpiles.</div><div class="tg">Owned</div></div>
-        <div class="row"><div class="n">02</div><div class="nm">Haul-truck fleet</div><div class="ds">Articulated dump trucks and tippers moving ore to processing and dispatch.</div><div class="tg">Owned</div></div>
-        <div class="row"><div class="n">03</div><div class="nm">Drilling crews</div><div class="ds">In-house drilling and development for resource definition and controlled extraction.</div><div class="tg">In-house</div></div>
-        <div class="row"><div class="n">04</div><div class="nm">Gravity processing</div><div class="ds">Crushing, sorting and gravity concentration to export-grade concentrate.</div><div class="tg">On-site</div></div>
-        <div class="row"><div class="n">05</div><div class="nm">Safety &amp; standards</div><div class="ds">Documented safety systems and supervision across every site, shift and area.</div><div class="tg">Zero-harm</div></div>
-        <div class="row"><div class="n">06</div><div class="nm">Export logistics</div><div class="ds">Documented road freight to regional ports; containerised export, full custody.</div><div class="tg">To port</div></div>
+        <div class="row"><div class="n">01</div><div class="nm">Excavation</div><div class="ds">Tracked excavators and front-loaders strip cover and lift ore straight off the working face.</div><div class="tg">Owned</div></div>
+        <div class="row"><div class="n">02</div><div class="nm">Haulage</div><div class="ds">Articulated dumpers and tippers shuttle ore from the face to the wash plant and on to dispatch.</div><div class="tg">Owned</div></div>
+        <div class="row"><div class="n">03</div><div class="nm">Development</div><div class="ds">Company drill teams open fresh ground and prove grade ahead of the diggers.</div><div class="tg">In-house</div></div>
+        <div class="row"><div class="n">04</div><div class="nm">Concentration</div><div class="ds">Jigs, spirals and shaking tables upgrade tantalite, wolframite and chromite by density — no chemicals.</div><div class="tg">On-site</div></div>
+        <div class="row"><div class="n">05</div><div class="nm">Safety</div><div class="ds">Daily toolbox talks, strict PPE and trained shift bosses on every bench.</div><div class="tg">Zero-harm</div></div>
+        <div class="row"><div class="n">06</div><div class="nm">Dispatch</div><div class="ds">Bagged and bulk concentrate trucked to the railhead and on to port, fully documented.</div><div class="tg">To port</div></div>
       </div>
     </div>
   </div>
@@ -365,14 +375,14 @@ footer{background:#100e0b;border-top:1px solid var(--line-2);padding:60px 0 40px
     <div class="lab">06 / Why Jangjing<span class="ln"></span></div>
     <div>
       <h2 class="h2">Built to deliver, not just to dig.</h2>
-      <p class="intro">We own the hard links — supply, fleet and compliance — that turn scattered ore into bankable metal.</p>
+      <p class="intro">What sets us apart isn't one mine — it's owning the whole path from scattered ore to bankable, traceable metal.</p>
       <div class="agrid">
-        <div class="acell"><div class="t">WHY / 01</div><h3>Secured, formalised supply</h3><p>Owned claims plus exclusive purchase deals bring informal miners into one documented chain.</p></div>
-        <div class="acell"><div class="t">WHY / 02</div><h3>Own heavy fleet</h3><p>Company-owned excavators, trucks and loaders — cost, schedule and quality under our control.</p></div>
-        <div class="acell"><div class="t">WHY / 03</div><h3>Four critical metals</h3><p>A diversified basket — tantalum, tungsten, antimony and chrome — all in structural demand.</p></div>
-        <div class="acell"><div class="t">WHY / 04</div><h3>World-class geology</h3><p>The Great Dyke and Zimbabwe's premier pegmatite fields — ground the market respects.</p></div>
-        <div class="acell"><div class="t">WHY / 05</div><h3>Compliant &amp; assayed</h3><p>Lawful title, approved channels and independent assay on every lot make supply bankable.</p></div>
-        <div class="acell"><div class="t">WHY / 06</div><h3>Science-backed</h3><p>University of Zimbabwe collaboration grounds our geology and processing in solid work.</p></div>
+        <div class="acell"><div class="t">WHY / 01</div><h3>One consolidated source</h3><p>Our claims and exclusive purchase deals fold dozens of small, informal diggings into a single accountable supply.</p></div>
+        <div class="acell"><div class="t">WHY / 02</div><h3>Our own machines</h3><p>Running our own diggers, trucks and plant lets us set the pace and protect the grade — not a hired contractor.</p></div>
+        <div class="acell"><div class="t">WHY / 03</div><h3>A four-metal basket</h3><p>Tantalum, tungsten, antimony and chrome — spread across markets that all sit on structural shortage.</p></div>
+        <div class="acell"><div class="t">WHY / 04</div><h3>Ground the market knows</h3><p>We work the Great Dyke and Zimbabwe's classic pegmatite fields — names buyers already trust.</p></div>
+        <div class="acell"><div class="t">WHY / 05</div><h3>Bankable lots</h3><p>Registered title, approved export channels and an independent assay on every single lot.</p></div>
+        <div class="acell"><div class="t">WHY / 06</div><h3>Backed by science</h3><p>Working with the University of Zimbabwe keeps our geology and metallurgy honest.</p></div>
       </div>
     </div>
   </div>
@@ -385,10 +395,10 @@ footer{background:#100e0b;border-top:1px solid var(--line-2);padding:60px 0 40px
       <h2 class="h2">Formal, lawful, supported.</h2>
       <p class="intro">Jangjing operates inside Zimbabwe's drive to formalise small-scale mining and add value to critical minerals.</p>
       <div class="grid">
-        <div class="blk"><div class="t">C-01 · Policy</div><h3>Government encouragement</h3><p>Zimbabwe actively supports formalising artisanal mining and beneficiating critical minerals — the gap our purchase agreements fill.</p></div>
-        <div class="blk"><div class="t">C-02 · Supply</div><h3>Formalising small-scale output</h3><p>Exclusive purchase deals bring informal miners into a documented, fairly-priced and compliant chain.</p></div>
-        <div class="blk"><div class="t">C-03 · Export</div><h3>Lawful title &amp; export</h3><p>Duly registered mining title and export through approved channels with independent assay on every lot.</p></div>
-        <div class="blk"><div class="t">C-04 · People</div><h3>Community relations</h3><p>Local jobs, training, fair prices and rehabilitation build durable trust with communities and authorities.</p></div>
+        <div class="blk"><div class="t">C-01 · Policy</div><h3>Policy tailwind</h3><p>National policy pushes to formalise artisanal mining and beneficiate critical minerals — exactly the gap our purchase deals close.</p></div>
+        <div class="blk"><div class="t">C-02 · Supply</div><h3>Bringing miners onto the books</h3><p>We pull informal diggers into a documented, fairly-priced and licensed supply chain.</p></div>
+        <div class="blk"><div class="t">C-03 · Export</div><h3>Clean, assayed export</h3><p>Registered mining title and approved export channels, with an independent assay on every lot.</p></div>
+        <div class="blk"><div class="t">C-04 · People</div><h3>Local trust</h3><p>Jobs, skills, fair prices and rehabilitation keep communities and authorities on side.</p></div>
       </div>
     </div>
   </div>
