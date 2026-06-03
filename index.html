@@ -54,7 +54,8 @@ img{display:block;max-width:100%}
 header.nav{position:sticky;top:0;z-index:60;background:rgba(21,18,15,.86);backdrop-filter:blur(12px);border-bottom:1px solid var(--line-2)}
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:74px}
 .brand{display:flex;align-items:center;gap:13px}
-.brand .logo{height:40px;width:auto;max-width:210px}
+.brand .logo{height:56px;width:auto;max-width:300px;display:block}
+@media(max-width:520px){.brand .logo{height:46px}}
 .brand .mk{width:40px;height:40px;border:1px solid var(--rust);display:grid;place-items:center;font-family:'Oswald';font-weight:700;font-size:22px;color:var(--copper)}
 .brand b{font-family:'Oswald';font-weight:600;font-size:22px;letter-spacing:.05em;line-height:1}
 .brand small{display:block;font-family:var(--mono);font-size:9px;letter-spacing:.18em;color:var(--muted);margin-top:3px;text-transform:uppercase}
